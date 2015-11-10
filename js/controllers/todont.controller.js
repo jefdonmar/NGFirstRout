@@ -3,6 +3,7 @@ import _ from 'underscore';
 let ToDont = function ($scope) {
 
   $scope.items = [];
+  $scope.bads = [];
 
   // Item Constructor
   let Item = function (task) {
@@ -21,8 +22,14 @@ let ToDont = function ($scope) {
 
   // Do Our Task
   $scope.doIt = function (item) {
+    // Find the specific item clicked by it's ID
     let i = _.findWhere($scope.items, { id: item.id });
-    i.status = 'closed';
+
+    // Update my items list and remove the one that was clicked
+    $scope.items = _.without($scope.items, i);
+
+    // Add the clicked one to my `bads` array
+    $scope.bads.push(i);
   };
 
 

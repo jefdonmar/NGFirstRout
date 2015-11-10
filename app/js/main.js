@@ -74,6 +74,7 @@ var _underscore2 = _interopRequireDefault(_underscore);
 var ToDont = function ToDont($scope) {
 
   $scope.items = [];
+  $scope.bads = [];
 
   // Item Constructor
   var Item = function Item(task) {
@@ -92,8 +93,14 @@ var ToDont = function ToDont($scope) {
 
   // Do Our Task
   $scope.doIt = function (item) {
+    // Find the specific item clicked by it's ID
     var i = _underscore2['default'].findWhere($scope.items, { id: item.id });
-    i.status = 'closed';
+
+    // Update my items list and remove the one that was clicked
+    $scope.items = _underscore2['default'].without($scope.items, i);
+
+    // Add the clicked one to my `bads` array
+    $scope.bads.push(i);
   };
 };
 
