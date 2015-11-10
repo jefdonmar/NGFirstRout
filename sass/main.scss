@@ -11,3 +11,12 @@ body {
   width: 500px;
   margin: 15px auto;
 }
+
+li {
+  cursor: pointer;
+}
+
+.closed {
+  color: red;
+  text-decoration: line-through;
+}

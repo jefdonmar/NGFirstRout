@@ -12,18 +12,23 @@ let config = function ($stateProvider, $urlRouterProvider) {
     })
     .state('root.home', {
       url: '/',
-      controller: 'HomeController',
+      controller: 'PageController',
       templateUrl: 'templates/home.tpl.html'
     })
     .state('root.about', {
       url: '/about',
-      controller: 'HomeController',
+      controller: 'PageController',
       templateUrl: 'templates/about.tpl.html'
     })
     .state('root.contact', {
       url: '/contact',
-      controller: 'HomeController',
+      controller: 'PageController',
       templateUrl: 'templates/contact.tpl.html'
+    })
+    .state('root.todontlist', {
+      url: '/todonts',
+      controller: 'ToDont',
+      templateUrl: 'templates/todont.tpl.html'
     });
 
 };
